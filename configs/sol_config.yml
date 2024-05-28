@@ -1,0 +1,29 @@
+extensions:  
+  client:
+    endpoints:
+      - wss://solana-mainnet.g.alchemy.com/v2/
+  event_bus:
+  # eth_api:
+  #   stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
+  telemetry:
+    provider: none
+  cache:
+    default_ttl_seconds: 60
+    default_size: 500
+  server:
+    port: 8545
+    listen_address: '0.0.0.0'
+    max_connections: 2000
+    max_batch_size: 10
+    cors: all
+
+middlewares:
+  methods:
+    - response
+    - block_tag
+    - cache
+    - upstream
+  subscriptions:
+    - upstream
+
+rpcs: solana
