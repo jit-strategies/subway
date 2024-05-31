@@ -37,7 +37,7 @@ extensions:
   prometheus:
     port: 9616
     listen_address: "0.0.0.0"
-    label: "dev"
+    chain_label: "dev"
 
 middlewares:
   methods:
